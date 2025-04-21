@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const TicketSchema = new mongoose.Schema({
   travel_type: {
     type: String,
-    enum: ["bus", "plane", "train"],
+    enum: ["автобус", "онгоц", "галт тэрэг"],
     required: true,
   },
   price: {
