@@ -5,7 +5,7 @@ import { authRouter } from "../route/auth";
 import ticketRouter from "../route/ticket";
 import geoInfoRouter from "../route/geoInfo";
 import customerRegistrationRouter from "../route/customerRegistration";
-const port = 8000;
+const port = 8001;
 const app = express();
 
 app.use(express.json());
