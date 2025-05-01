@@ -14,6 +14,10 @@ const TicketSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  travel_image: {
+    type: String,
+    required: true,
+  },
 });
 
 export const TicketModel = mongoose.model("Ticket", TicketSchema);
