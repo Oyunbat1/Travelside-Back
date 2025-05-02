@@ -31,6 +31,7 @@ export const getZoningCategoryWithProvinces = async (
         $project: {
           zoneName: 1,
           tickets: {
+            _id: 1,
             travel_type: 1,
             price: 1,
             arrival_location: 1,
