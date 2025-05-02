@@ -1,6 +1,11 @@
 import mongoose from "mongoose";
 
 const TicketSchema = new mongoose.Schema({
+  zoningID: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "zoningCategory",
+    required: true,
+  },
   travel_type: {
     type: String,
     enum: ["автобус", "онгоц", "галт тэрэг"],
@@ -11,6 +16,14 @@ const TicketSchema = new mongoose.Schema({
     required: true,
   },
   arrival_location: {
+    type: String,
+    required: true,
+  },
+  travel_distance: {
+    type: String,
+    required: true,
+  },
+  travel_detail: {
     type: String,
     required: true,
   },

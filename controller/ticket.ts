@@ -1,13 +1,19 @@
 import { Request, Response } from "express";
 import { TicketModel } from "../schema/Ticket";
 
-// controller/ticket.ts
 export const createTicket = async (
   req: Request,
   res: Response
 ): Promise<void> => {
   try {
-    const { travel_type, price, arrival_location } = req.body;
+    const {
+      travel_type,
+      price,
+      arrival_location,
+      travel_distance,
+      travel_detail,
+    } = req.body;
+    const { zoningID } = req.params;
     const file = req.file;
 
     if (!file) {
@@ -15,24 +21,26 @@ export const createTicket = async (
       return;
     }
 
-    // Convert buffer to base64
     const travel_image = file.buffer.toString("base64");
 
     const ticketCreated = await TicketModel.create({
+      zoningID,
       travel_type,
       price,
       arrival_location,
+      travel_detail,
+      travel_distance,
       travel_image,
     });
 
     res.json({
       success: true,
-      message: "Amjilttai ticket burtgegdlee",
+      message: "Амжилттай ticket бүртгэгдлээ",
       ticket: ticketCreated,
     });
   } catch (err) {
     console.log(err);
-    res.status(500).json({ message: "Server aldaa" });
+    res.status(500).json({ message: "Server алдаа" });
   }
 };
 

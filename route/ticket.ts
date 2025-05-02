@@ -9,7 +9,7 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
 ticketRouter
-  .post("/create", upload.single("travel_image"), createTicket)
+  .post("/create/:zoningID", upload.single("travel_image"), createTicket)
   .get("/get", getTickets);
 
 export default ticketRouter;
