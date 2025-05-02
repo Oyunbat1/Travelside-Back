@@ -36,6 +36,8 @@ export const getZoningCategoryWithProvinces = async (
             price: 1,
             arrival_location: 1,
             travel_image: 1,
+            travel_distance: 1,
+            travel_detail: 1,
           },
         },
       },
