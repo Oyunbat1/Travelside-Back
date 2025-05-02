@@ -20,6 +20,6 @@ app.use("/api/v1/zoning", zoningRouter);
 
 app.listen(port, async () => {
   await connectDb();
-  console.log("Connected to MongoDB");
+  console.log("Conneced to MongoDB");
   console.log(`Server is running on port ${port}`);
 });
